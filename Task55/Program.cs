@@ -5,7 +5,7 @@
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
-    int[,] matrix = new int[rows, columns]; 
+    int[,] matrix = new int[rows, columns];
 
     Random rnd = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -34,15 +34,15 @@ void PrintMatrix(int[,] matrix)
 
 int[,] ChangePlace(int[,] arr)
 {
-int[,] arrResult = new int[arr.GetLength(0), arr.GetLength(1)];
-for (int i = 0; i < arr.GetLength(0); i++)
-{
-for (int j = 0; j < arr.GetLength(1); j++)
-{
-arrResult[i, j] = arr[j, i];
-}
-}
-return arrResult;
+    int[,] arrResult = new int[arr.GetLength(0), arr.GetLength(1)];
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            arrResult[i, j] = arr[j, i];
+        }
+    }
+    return arrResult;
 }
 
 bool CheckSq(int[,] array)
@@ -50,7 +50,7 @@ bool CheckSq(int[,] array)
     return array.GetLength(0) == array.GetLength(1);
 }
 
-int[,] matrix = CreateMatrixRndInt(5, 5, 1, 99);
+int[,] matrix = CreateMatrixRndInt(6, 6, 1, 99);
 PrintMatrix(matrix);
 Console.WriteLine();
 
@@ -59,6 +59,6 @@ if (CheckSq(matrix))
     int[,] array = ChangePlace(matrix);
     PrintMatrix(array);
 }
-else Console.WriteLine("Количество строк должно совпадать с количеством столбцов");
+else Console.WriteLine("Количество строк должно совпадать с количеством столбцов!");
 
 
