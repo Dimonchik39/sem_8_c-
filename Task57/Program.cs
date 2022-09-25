@@ -5,7 +5,7 @@
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
-    int[,] matrix = new int[rows, columns]; 
+    int[,] matrix = new int[rows, columns];
 
     Random rnd = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -49,30 +49,30 @@ int[] MatrixToArray(int[,] matr)
 
 void PrintArray(int[] array)
 {
-Console.Write("[");
-for (int i = 0; i < array.Length; i++)
-{
-if (i < array.Length - 1) Console.Write($"{array[i]}, ");
-else Console.Write($"{array[i]}");
-}
-Console.Write("]");
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
+        else Console.Write($"{array[i]}");
+    }
+    Console.Write("]");
 }
 
 void ShowCount(int[] arr)
 {
-int num = arr[0];
-int count = 1;
-for (int i = 1; i < arr.Length; i++)
-{
-if (arr[i] == num) count++;
-else
-{
-Console.WriteLine($"{num} содержится {count} раз. ");
-num = arr[i];
-count = 1;
-}
-if (i == arr.Length-1) Console.WriteLine($"{num} содержится {count} раз.");
-}
+    int num = arr[0];
+    int count = 1;
+    for (int i = 1; i < arr.Length; i++)
+    {
+        if (arr[i] == num) count++;
+        else
+        {
+            Console.WriteLine($"{num} содержится {count} раз. ");
+            num = arr[i];
+            count = 1;
+        }
+        if (i == arr.Length - 1) Console.WriteLine($"{num} содержится {count} раз. ");
+    }
 }
 
 int[,] matrix = CreateMatrixRndInt(5, 5, 1, 9);
